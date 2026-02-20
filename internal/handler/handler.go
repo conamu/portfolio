@@ -13,9 +13,10 @@ import (
 // TemplateData is the common envelope passed to every template.
 type TemplateData struct {
 	Theme    config.Theme
-	Page     string // "home" | "about"
+	Page     string // "home" | "about" | "cv"
 	Projects []config.Project
 	About    config.About
+	CV       config.CVData
 }
 
 // Handler holds shared dependencies for all HTTP handlers.
@@ -32,6 +33,9 @@ func New(fsys fs.FS, theme config.Theme, projects []config.Project, about config
 		"nl2br": func(s string) template.HTML {
 			escaped := template.HTMLEscapeString(s)
 			return template.HTML(strings.ReplaceAll(escaped, "\n", "<br>"))
+		},
+		"safeHTML": func(s string) template.HTML {
+			return template.HTML(s)
 		},
 	}
 
@@ -73,6 +77,21 @@ func (h *Handler) About(w http.ResponseWriter, r *http.Request) {
 		Theme: h.theme,
 		Page:  "about",
 		About: h.about,
+	})
+}
+
+func (h *Handler) CV(w http.ResponseWriter, r *http.Request) {
+	cv, err := config.FetchCV(h.about.CVApiURL)
+	if err != nil {
+		log.Printf("cv fetch error: %v", err)
+		http.Error(w, "Could not load CV data. Please try again later.", http.StatusBadGateway)
+		return
+	}
+	h.render(w, "cv.html", TemplateData{
+		Theme: h.theme,
+		Page:  "cv",
+		About: h.about,
+		CV:    cv,
 	})
 }
 

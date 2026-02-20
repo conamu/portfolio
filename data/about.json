@@ -1,10 +1,11 @@
 {
   "name":        "Constantin Amundsen",
   "tagline":     "Software Engineer & Builder of Things",
-  "bio":         "Hi, I'm Constantin. I build things with Go and other tools I find interesting. I care about clean code, good design, and shipping stuff that actually works.\n\nFeel free to reach out or check out my projects.",
+  "bio":         "Hi, I'm Constantin. I build things with Go and other tools I find interesting. I care about shipping stuff that works and is useful.\nMy stack consists of Golang for the backend and Flutter for more complex webapp and mobile app uses. For simple frontends like landing pages and this portfolio I use Claude Code to not waste time on HTML and CSS. I dislike the use of web frameworks and interpreted languages.\n\nFeel free to reach out or check out my projects.",
   "photo":    "/static/img/profile.jpg",
-  "cv_url":   "https://v4.rxresu.me/conamu/cv-english",
-  "cv_label": "Checkout CV ↗",
+  "cv_url":      "https://rxresu.me/conamu/cv-english",
+  "cv_api_url":  "https://v4.rxresu.me/api/resume/public/conamu/cv-english/stealthily",
+  "cv_label": "Check out CV ↗",
   "show_cv":  true,
   "links": [
     { "label": "GitHub",   "url": "https://github.com/conamu" },

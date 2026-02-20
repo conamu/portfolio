@@ -29,25 +29,6 @@
     </div>
   </div>
 
-  {{if .About.ShowCV}}
-  <div class="cv-section">
-    <div class="cv-section__header">
-      <h2 class="section-title">Curriculum Vitae</h2>
-      <a href="{{.About.CVURL}}" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
-        {{.About.CVLabel}}
-      </a>
-    </div>
-    <div class="cv-embed-wrap">
-      <iframe
-        src="{{.About.CVURL}}"
-        class="cv-embed"
-        title="Curriculum Vitae"
-        loading="lazy"
-        allowfullscreen
-      ></iframe>
-    </div>
-  </div>
-  {{end}}
 </section>
 {{template "layout_end" .}}
 {{end}}

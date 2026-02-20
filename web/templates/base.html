@@ -6,6 +6,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{.Theme.SiteTitle}}</title>
 
+  <!-- ── Standard SEO ───────────────────────────────────────────────────────── -->
+  <meta name="description" content="Portfolio of Constantin Amundsen — Senior Software Engineer based in Berlin, Germany. Specialising in Go (Golang), AWS, microservices and distributed systems.">
+  <meta name="keywords"    content="Constantin Amundsen, Software Engineer, Golang, Go, AWS, microservices, distributed systems, Berlin, backend developer, portfolio">
+  <meta name="author"      content="Constantin Amundsen">
+  <meta name="robots"      content="index, follow">
+  <link rel="canonical"    href="https://conamu.com{{if eq .Page "about"}}/about{{else if eq .Page "cv"}}/cv{{end}}">
+
+  <!-- ── Open Graph (social / AI crawlers) ─────────────────────────────────── -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="Constantin Amundsen — Portfolio">
+  <meta property="og:locale"      content="en_US">
+  <meta property="og:title"       content="{{if eq .Page "home"}}Projects — Constantin Amundsen{{else if eq .Page "about"}}About — Constantin Amundsen{{else if eq .Page "cv"}}CV — Constantin Amundsen{{else}}{{.Theme.SiteTitle}}{{end}}">
+  <meta property="og:description" content="Senior Software Engineer in Berlin. 6+ years of Go, 4+ years of AWS. Previously Home24 SE, currently Amboss SE. Open-source contributor.">
+  <meta property="og:url"         content="https://conamu.com{{if eq .Page "about"}}/about{{else if eq .Page "cv"}}/cv{{end}}">
+  <meta property="og:image"       content="https://conamu.com/static/img/og.png">
+
+  <!-- ── Twitter / X card ──────────────────────────────────────────────────── -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Constantin Amundsen — Software Engineer">
+  <meta name="twitter:description" content="Senior Software Engineer in Berlin. Go, AWS, microservices, distributed systems.">
+  <meta name="twitter:image"       content="https://conamu.com/static/img/og.png">
+
+  <!-- ── JSON-LD structured data (Google + AI engines) ─────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Constantin Amundsen",
+    "jobTitle": "Senior Software Engineer",
+    "url": "https://conamu.com",
+    "email": "constantin.amundsen@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Berlin",
+      "addressCountry": "DE"
+    },
+    "sameAs": [
+      "https://github.com/conamu",
+      "https://www.linkedin.com/in/conamu/"
+    ],
+    "knowsAbout": ["Go", "Golang", "AWS", "Microservices", "Distributed Systems", "GraphQL", "CI/CD", "Kubernetes", "NATS"],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Amboss SE",
+      "url": "https://amboss.com"
+    },
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "name": "AWS Certified Cloud Developer",
+      "credentialCategory": "certification",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Amazon Web Services"
+      }
+    }
+  }
+  </script>
+
   <!-- Google Fonts: Nunito -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,7 +117,8 @@
   <div class="header-inner">
     <a href="/" class="logo">{{.Theme.LogoText}}</a>
     <nav class="site-nav">
-      <a href="/" class="nav-link{{if eq .Page "home"}} nav-link--active{{end}}">Projects</a>
+      <a href="/"     class="nav-link{{if eq .Page "home"}} nav-link--active{{end}}">Projects</a>
+      <a href="/cv"   class="nav-link{{if eq .Page "cv"}}   nav-link--active{{end}}">CV</a>
       <a href="/about" class="nav-link{{if eq .Page "about"}} nav-link--active{{end}}">About</a>
     </nav>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">

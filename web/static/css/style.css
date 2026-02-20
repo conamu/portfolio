@@ -185,6 +185,7 @@ ul  { list-style: none; }
   overflow: hidden;
   border-bottom: var(--border-width) solid var(--border);
   background: var(--tag-bg);
+  position: relative;
 }
 
 .project-card__img {
@@ -196,6 +197,23 @@ ul  { list-style: none; }
 
 .project-card:hover .project-card__img {
   transform: scale(1.04);
+}
+
+.project-card__unsplash {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.25rem 0.5rem;
+  background: rgba(0, 0, 0, 0.45);
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: right;
+}
+
+.project-card__unsplash a {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: underline;
 }
 
 .project-card__body {
@@ -399,6 +417,210 @@ ul  { list-style: none; }
   border: none;
 }
 
+/* ─── CV page ──────────────────────────────────────────────────────────────── */
+.cv-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Header card */
+.cv-header-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  background: var(--surface);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow);
+  padding: 2rem;
+}
+
+.cv-header-card__name {
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.cv-header-card__headline {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-top: 0.3rem;
+}
+
+.cv-header-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-top: 0.75rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.cv-header-card__meta li { display: flex; align-items: center; gap: 0.3rem; }
+.cv-header-card__meta a  { color: var(--primary-dark); font-weight: 700; text-decoration: underline; }
+
+/* Two-column body */
+.cv-body {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Generic cv card */
+.cv-card {
+  background: var(--surface);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cv-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cv-card__title {
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  padding-bottom: 0.5rem;
+  border-bottom: var(--border-width) solid var(--border);
+}
+
+/* Skills */
+.cv-skills-list { display: flex; flex-direction: column; gap: 0.9rem; }
+
+.cv-skill__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.cv-skill__name   { font-weight: 800; font-size: 0.92rem; }
+.cv-skill__years  { font-size: 0.78rem; color: var(--text-muted); font-weight: 600; white-space: nowrap; }
+
+.cv-skill__keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.35rem;
+}
+
+/* Languages */
+.cv-lang-list { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.cv-lang {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.cv-lang__name  { font-weight: 800; }
+.cv-lang__level { color: var(--text-muted); font-size: 0.82rem; font-weight: 600; }
+
+/* Certifications */
+.cv-cert-list { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.cv-cert { display: flex; flex-direction: column; gap: 0.15rem; }
+.cv-cert__name   { font-weight: 800; font-size: 0.9rem; }
+.cv-cert__issuer { font-size: 0.8rem; color: var(--text-muted); }
+.cv-cert__date   { font-size: 0.78rem; color: var(--text-muted); }
+
+/* Timeline (experience + projects) */
+.cv-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.cv-timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 12px;
+  bottom: 12px;
+  width: var(--border-width);
+  background: var(--border);
+}
+
+.cv-timeline__item {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.cv-timeline__item:last-child { padding-bottom: 0; }
+
+.cv-timeline__dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: var(--border-width) solid var(--border);
+  box-shadow: 2px 2px 0 var(--shadow);
+  flex-shrink: 0;
+  margin-top: 3px;
+  z-index: 1;
+}
+
+.cv-timeline__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cv-timeline__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cv-timeline__role    { font-weight: 900; font-size: 1rem; }
+.cv-timeline__company { font-weight: 700; font-size: 0.88rem; color: var(--primary-dark); }
+
+.cv-timeline__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+  flex-shrink: 0;
+}
+
+.cv-timeline__date     { font-size: 0.78rem; color: var(--text-muted); font-weight: 700; white-space: nowrap; }
+.cv-timeline__location { font-size: 0.75rem; color: var(--text-muted); text-align: right; }
+
+.cv-timeline__summary {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Shared link style used in CV */
+.link {
+  color: var(--primary-dark);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
 /* ─── Empty state ──────────────────────────────────────────────────────────── */
 .empty-state {
   color: var(--text-muted);
@@ -438,6 +660,23 @@ ul  { list-style: none; }
 
   .cv-embed {
     height: 500px;
+  }
+
+  .cv-body {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-header-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cv-timeline__header {
+    flex-direction: column;
+  }
+
+  .cv-timeline__meta {
+    align-items: flex-start;
   }
 
   .header-inner {

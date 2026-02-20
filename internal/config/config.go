@@ -35,13 +35,15 @@ type ThemeColors struct {
 
 // Project is one entry in data/projects.json.
 type Project struct {
-	ID          string   `json:"id"`
-	Title       string   `json:"title"`
-	Description string   `json:"description"`
-	Image       string   `json:"image"`
-	Tags        []string `json:"tags"`
-	URL         string   `json:"url"`
-	GitHub      string   `json:"github"`
+	ID                string   `json:"id"`
+	Title             string   `json:"title"`
+	Description       string   `json:"description"`
+	Image             string   `json:"image"`
+	UnsplashAuthor    string   `json:"unsplash_author"`     // display name, e.g. "John Doe"
+	UnsplashAuthorURL string   `json:"unsplash_author_url"` // link to author's Unsplash profile
+	Tags              []string `json:"tags"`
+	URL               string   `json:"url"`
+	GitHub            string   `json:"github"`
 }
 
 // AboutLink is a social/external link on the about page.
@@ -52,14 +54,15 @@ type AboutLink struct {
 
 // About holds the content for data/about.json.
 type About struct {
-	Name    string      `json:"name"`
-	Tagline string      `json:"tagline"`
-	Bio     string      `json:"bio"`
-	Photo   string      `json:"photo"`
-	CVURL   string      `json:"cv_url"`   // rxresume.me (or any) URL to embed in an iframe
-	CVLabel string      `json:"cv_label"` // label for the "open in new tab" button
-	ShowCV  bool        `json:"show_cv"`
-	Links   []AboutLink `json:"links"`
+	Name     string      `json:"name"`
+	Tagline  string      `json:"tagline"`
+	Bio      string      `json:"bio"`
+	Photo    string      `json:"photo"`
+	CVURL    string      `json:"cv_url"`     // public rxresume URL (open in new tab button)
+	CVApiURL string      `json:"cv_api_url"` // rxresume stealthy API endpoint to fetch CV data
+	CVLabel  string      `json:"cv_label"`
+	ShowCV   bool        `json:"show_cv"`
+	Links    []AboutLink `json:"links"`
 }
 
 func LoadTheme(fsys fs.FS, path string) (Theme, error) {

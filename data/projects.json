@@ -1,20 +1,46 @@
 [
   {
-    "id":          "portfolio",
-    "title":       "Portfolio site",
-    "description": "This site. Nothing special. Golang based webserver with html templates.",
-    "image":       "/static/img/placeholder.png",
-    "tags":        ["Go", "Web"],
-    "url":         "https://conamu.com",
-    "github":      "https://github.com/conamu/portfolio"
+    "id":                  "portfolio",
+    "title":               "Portfolio site",
+    "description":         "This site. Nothing special. Golang based webserver with html templates.",
+    "image":               "/static/img/placeholder.jpg",
+    "unsplash_author":     "Hal Gatewood",
+    "unsplash_author_url": "https://unsplash.com/de/@halacious",
+    "tags":                ["Go", "Web"],
+    "url":                 "https://conamu.com",
+    "github":              "https://github.com/conamu/portfolio"
   },
   {
-    "id":          "worker-lib",
-    "title":       "Golang Worker Library",
-    "description": "A Module for Golang that allows easy creation and control of more complex goroutine use cases.",
-    "image":       "/static/img/placeholder.png",
-    "tags":        ["Go", "Concurrency", "Open Source"],
-    "url":         "",
-    "github":      "https://github.com/conamu/go-worker"
+    "id":                  "worker-lib",
+    "title":               "Golang Worker Library",
+    "description":         "A Module for Golang that allows easy creation and control of more complex goroutine use cases.",
+    "image":               "/static/img/worker.jpg",
+    "unsplash_author":     "Mark Hamilton",
+    "unsplash_author_url": "https://unsplash.com/de/@monkey45",
+    "tags":                ["Go", "Concurrency", "OSS"],
+    "url":                 "",
+    "github":              "https://github.com/conamu/go-worker"
+  },
+  {
+    "id":                  "article-site",
+    "title":               "A Historical Blog site",
+    "description":         "A project still in development with a customer. This is an archive of articles, books and podcasts he wrote.",
+    "image":               "/static/img/placeholder.jpg",
+    "unsplash_author":     "Hal Gatewood",
+    "unsplash_author_url": "https://unsplash.com/de/@halacious",
+    "tags":                ["Go", "Web", "Commercial"],
+    "url":                 "https://falanga.conamu.com",
+    "github":              ""
+  },
+  {
+    "id":                  "mycorrhizal",
+    "title":               "Go Mycorrhizal Module",
+    "description":         "A soon to be open source project in active development. Module that enables distributed monoliths with tooling for embedded distributed messaging and caching across the cluster.",
+    "image":               "/static/img/mycorrhizal.jpg",
+    "unsplash_author":     "Alina Grubnyak",
+    "unsplash_author_url": "https://unsplash.com/de/@alinnnaaaa",
+    "tags":                ["Go", "Module", "Distributed Computing", "Networking", "OSS"],
+    "url":                 "",
+    "github":              ""
   }
 ]

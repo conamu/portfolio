@@ -37,6 +37,7 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("GET /", h.Home)
 	mux.HandleFunc("GET /about", h.About)
+	mux.HandleFunc("GET /cv", h.CV)
 	mux.Handle("GET /static/", http.StripPrefix("/static/", h.Static()))
 
 	log.Println("Server listening on http://localhost:8080")

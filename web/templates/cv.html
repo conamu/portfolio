@@ -1,0 +1,155 @@
+{{define "cv.html"}}
+{{template "layout_start" .}}
+<section class="cv-page">
+
+  {{/* ── Header card ───────────────────────────────────────────── */}}
+  <div class="cv-header-card">
+    <div class="cv-header-card__text">
+      <h1 class="cv-header-card__name">{{.CV.Basics.Name}}</h1>
+      <p class="cv-header-card__headline">{{.CV.Basics.Headline}}</p>
+      <ul class="cv-header-card__meta">
+        {{if .CV.Basics.Location}}<li>📍 {{.CV.Basics.Location}}</li>{{end}}
+        {{if .CV.Basics.Email}}<li>✉️ <a href="mailto:{{.CV.Basics.Email}}">{{.CV.Basics.Email}}</a></li>{{end}}
+      </ul>
+    </div>
+    <a href="{{.About.CVURL}}" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+      {{.About.CVLabel}}
+    </a>
+  </div>
+
+  <div class="cv-body">
+
+    {{/* ── Left column ────────────────────────────────────────── */}}
+    <div class="cv-col cv-col--left">
+
+      {{/* Skills */}}
+      {{if .CV.Sections.Skills.Items}}
+      <div class="cv-card">
+        <h2 class="cv-card__title">Skills</h2>
+        <ul class="cv-skills-list">
+          {{range .CV.Sections.Skills.Items}}
+          <li class="cv-skill">
+            <div class="cv-skill__header">
+              <span class="cv-skill__name">{{.Name}}</span>
+              {{if .Description}}<span class="cv-skill__years">{{.Description}}</span>{{end}}
+            </div>
+            {{if .Keywords}}
+            <ul class="cv-skill__keywords">
+              {{range .Keywords}}<li class="tag">{{.}}</li>{{end}}
+            </ul>
+            {{end}}
+          </li>
+          {{end}}
+        </ul>
+      </div>
+      {{end}}
+
+      {{/* Languages */}}
+      {{if .CV.Sections.Languages.Items}}
+      <div class="cv-card">
+        <h2 class="cv-card__title">Languages</h2>
+        <ul class="cv-lang-list">
+          {{range .CV.Sections.Languages.Items}}
+          <li class="cv-lang">
+            <span class="cv-lang__name">{{.Name}}</span>
+            <span class="cv-lang__level">{{.Description}}</span>
+          </li>
+          {{end}}
+        </ul>
+      </div>
+      {{end}}
+
+      {{/* Certifications */}}
+      {{if .CV.Sections.Certs.Items}}
+      <div class="cv-card">
+        <h2 class="cv-card__title">Certifications</h2>
+        <ul class="cv-cert-list">
+          {{range .CV.Sections.Certs.Items}}
+          <li class="cv-cert">
+            {{if .URL.Href}}
+            <a href="{{.URL.Href}}" class="cv-cert__name link" target="_blank" rel="noopener noreferrer">{{.Name}} ↗</a>
+            {{else}}
+            <span class="cv-cert__name">{{.Name}}</span>
+            {{end}}
+            <span class="cv-cert__issuer">{{.Issuer}}</span>
+            {{if .Date}}<span class="cv-cert__date">{{.Date}}</span>{{end}}
+          </li>
+          {{end}}
+        </ul>
+      </div>
+      {{end}}
+
+    </div>
+
+    {{/* ── Right column ───────────────────────────────────────── */}}
+    <div class="cv-col cv-col--right">
+
+      {{/* Experience */}}
+      {{if .CV.Sections.Experience.Items}}
+      <div class="cv-card">
+        <h2 class="cv-card__title">Experience</h2>
+        <ul class="cv-timeline">
+          {{range .CV.Sections.Experience.Items}}
+          <li class="cv-timeline__item">
+            <div class="cv-timeline__dot"></div>
+            <div class="cv-timeline__content">
+              <div class="cv-timeline__header">
+                <div>
+                  <p class="cv-timeline__role">{{.Position}}</p>
+                  {{if .URL.Href}}
+                  <a href="{{.URL.Href}}" class="cv-timeline__company link" target="_blank" rel="noopener noreferrer">{{.Company}} ↗</a>
+                  {{else}}
+                  <p class="cv-timeline__company">{{.Company}}</p>
+                  {{end}}
+                </div>
+                <div class="cv-timeline__meta">
+                  {{if .Date}}<span class="cv-timeline__date">{{.Date}}</span>{{end}}
+                  {{if .Location}}<span class="cv-timeline__location">{{.Location}}</span>{{end}}
+                </div>
+              </div>
+              {{if .Summary}}<p class="cv-timeline__summary">{{safeHTML .Summary}}</p>{{end}}
+            </div>
+          </li>
+          {{end}}
+        </ul>
+      </div>
+      {{end}}
+
+      {{/* Projects */}}
+      {{if .CV.Sections.Projects.Items}}
+      <div class="cv-card">
+        <h2 class="cv-card__title">Notable Work</h2>
+        <ul class="cv-timeline">
+          {{range .CV.Sections.Projects.Items}}
+          <li class="cv-timeline__item">
+            <div class="cv-timeline__dot"></div>
+            <div class="cv-timeline__content">
+              <div class="cv-timeline__header">
+                <div>
+                  {{if .URL.Href}}
+                  <a href="{{.URL.Href}}" class="cv-timeline__role link" target="_blank" rel="noopener noreferrer">{{.Name}} ↗</a>
+                  {{else}}
+                  <p class="cv-timeline__role">{{.Name}}</p>
+                  {{end}}
+                </div>
+                {{if .Date}}<span class="cv-timeline__date">{{.Date}}</span>{{end}}
+              </div>
+              {{if .Summary}}<p class="cv-timeline__summary">{{.Summary}}</p>{{end}}
+              {{if .Keywords}}
+              <ul class="cv-skill__keywords" style="margin-top:0.5rem">
+                {{range .Keywords}}<li class="tag">{{.}}</li>{{end}}
+              </ul>
+              {{end}}
+            </div>
+          </li>
+          {{end}}
+        </ul>
+      </div>
+      {{end}}
+
+    </div>
+  </div>
+
+</section>
+{{template "layout_end" .}}
+{{end}}
