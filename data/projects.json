@@ -1,0 +1,20 @@
+[
+  {
+    "id":          "portfolio",
+    "title":       "Portfolio site",
+    "description": "This site. Nothing special. Golang based webserver with html templates.",
+    "image":       "/static/img/placeholder.png",
+    "tags":        ["Go", "Web"],
+    "url":         "https://conamu.com",
+    "github":      "https://github.com/conamu/portfolio"
+  },
+  {
+    "id":          "worker-lib",
+    "title":       "Golang Worker Library",
+    "description": "A Module for Golang that allows easy creation and control of more complex goroutine use cases.",
+    "image":       "/static/img/placeholder.png",
+    "tags":        ["Go", "Concurrency", "Open Source"],
+    "url":         "",
+    "github":      "https://github.com/conamu/go-worker"
+  }
+]

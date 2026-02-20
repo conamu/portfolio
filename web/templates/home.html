@@ -1,0 +1,39 @@
+{{define "home.html"}}
+{{template "layout_start" .}}
+<section class="projects-section">
+  <h2 class="section-title">Projects</h2>
+  {{if .Projects}}
+  <div class="projects-grid">
+    {{range .Projects}}
+    <article class="project-card">
+      <div class="project-card__img-wrap">
+        <img src="{{.Image}}" alt="{{.Title}}" class="project-card__img" loading="lazy">
+      </div>
+      <div class="project-card__body">
+        <h3 class="project-card__title">{{.Title}}</h3>
+        <p class="project-card__desc">{{.Description}}</p>
+        {{if .Tags}}
+        <ul class="project-card__tags">
+          {{range .Tags}}<li class="tag">{{.}}</li>{{end}}
+        </ul>
+        {{end}}
+        <div class="project-card__links">
+          <a href="{{.GitHub}}" class="btn btn--outline" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          {{if .URL}}
+          <a href="{{.URL}}" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+            Visit ↗
+          </a>
+          {{end}}
+        </div>
+      </div>
+    </article>
+    {{end}}
+  </div>
+  {{else}}
+  <p class="empty-state">No projects yet. Add some in <code>data/projects.json</code>.</p>
+  {{end}}
+</section>
+{{template "layout_end" .}}
+{{end}}

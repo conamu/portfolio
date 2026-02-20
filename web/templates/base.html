@@ -1,0 +1,85 @@
+{{define "layout_start"}}
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{.Theme.SiteTitle}}</title>
+
+  <!-- Google Fonts: Nunito -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Inject theme CSS variables from server-side config -->
+  <style>
+    :root {
+      --font-family:    {{.Theme.FontFamily}};
+      --radius:         {{.Theme.BorderRadius}};
+      --border-width:   {{.Theme.BorderWidth}};
+      --shadow-offset:  {{.Theme.ShadowOffset}};
+    }
+    :root, [data-theme="light"] {
+      --bg:           {{.Theme.Light.Background}};
+      --surface:      {{.Theme.Light.Surface}};
+      --primary:      {{.Theme.Light.Primary}};
+      --primary-dark: {{.Theme.Light.PrimaryDark}};
+      --accent:       {{.Theme.Light.Accent}};
+      --accent-dark:  {{.Theme.Light.AccentDark}};
+      --text:         {{.Theme.Light.Text}};
+      --text-muted:   {{.Theme.Light.TextMuted}};
+      --border:       {{.Theme.Light.Border}};
+      --shadow:       {{.Theme.Light.Shadow}};
+      --nav-bg:       {{.Theme.Light.NavBg}};
+      --tag-bg:       {{.Theme.Light.TagBg}};
+      --tag-text:     {{.Theme.Light.TagText}};
+    }
+    [data-theme="dark"] {
+      --bg:           {{.Theme.Dark.Background}};
+      --surface:      {{.Theme.Dark.Surface}};
+      --primary:      {{.Theme.Dark.Primary}};
+      --primary-dark: {{.Theme.Dark.PrimaryDark}};
+      --accent:       {{.Theme.Dark.Accent}};
+      --accent-dark:  {{.Theme.Dark.AccentDark}};
+      --text:         {{.Theme.Dark.Text}};
+      --text-muted:   {{.Theme.Dark.TextMuted}};
+      --border:       {{.Theme.Dark.Border}};
+      --shadow:       {{.Theme.Dark.Shadow}};
+      --nav-bg:       {{.Theme.Dark.NavBg}};
+      --tag-bg:       {{.Theme.Dark.TagBg}};
+      --tag-text:     {{.Theme.Dark.TagText}};
+    }
+  </style>
+
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">{{.Theme.LogoText}}</a>
+    <nav class="site-nav">
+      <a href="/" class="nav-link{{if eq .Page "home"}} nav-link--active{{end}}">Projects</a>
+      <a href="/about" class="nav-link{{if eq .Page "about"}} nav-link--active{{end}}">About</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+      <span class="theme-toggle__icon" id="themeIcon">☀️</span>
+    </button>
+  </div>
+</header>
+
+<main class="site-main">
+{{end}}
+
+
+{{define "layout_end"}}
+</main>
+
+<footer class="site-footer">
+  <p>© {{.Theme.LogoText}}</p>
+</footer>
+
+<script src="/static/js/theme.js"></script>
+</body>
+</html>
+{{end}}

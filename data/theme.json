@@ -1,0 +1,38 @@
+{
+  "light": {
+    "background":      "#faf8f5",
+    "surface":         "#ffffff",
+    "primary":         "#7ec8c8",
+    "primary_dark":    "#5aabab",
+    "accent":          "#f9a8d4",
+    "accent_dark":     "#e879a8",
+    "text":            "#2d2d2d",
+    "text_muted":      "#6b6b6b",
+    "border":          "#2d2d2d",
+    "shadow":          "#2d2d2d",
+    "nav_bg":          "#ffffff",
+    "tag_bg":          "#e0f4f4",
+    "tag_text":        "#2d7b7b"
+  },
+  "dark": {
+    "background":      "#1a1a2e",
+    "surface":         "#16213e",
+    "primary":         "#5aabab",
+    "primary_dark":    "#3d8a8a",
+    "accent":          "#e879a8",
+    "accent_dark":     "#c4507f",
+    "text":            "#e8e8e8",
+    "text_muted":      "#a0a0b0",
+    "border":          "#e8e8e8",
+    "shadow":          "#000000",
+    "nav_bg":          "#16213e",
+    "tag_bg":          "#1e3a4a",
+    "tag_text":        "#7ec8c8"
+  },
+  "font_family":       "'Nunito', 'Segoe UI', system-ui, sans-serif",
+  "border_radius":     "12px",
+  "border_width":      "2.5px",
+  "shadow_offset":     "5px",
+  "logo_text":         "Constantin Amundsen",
+  "site_title":        "Portfolio — Constantin Amundsen"
+}

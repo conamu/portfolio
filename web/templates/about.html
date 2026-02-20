@@ -1,0 +1,53 @@
+{{define "about.html"}}
+{{template "layout_start" .}}
+<section class="about-section">
+  <div class="about-card">
+    <div class="about-card__photo-wrap">
+      {{if .About.Photo}}
+      <img src="{{.About.Photo}}" alt="{{.About.Name}}" class="about-card__photo">
+      {{else}}
+      <div class="about-card__photo-placeholder">👤</div>
+      {{end}}
+    </div>
+    <div class="about-card__content">
+      <h1 class="about-card__name">{{.About.Name}}</h1>
+      {{if .About.Tagline}}
+      <p class="about-card__tagline">{{.About.Tagline}}</p>
+      {{end}}
+      <div class="about-card__bio">
+        <p>{{nl2br .About.Bio}}</p>
+      </div>
+      {{if .About.Links}}
+      <ul class="about-card__links">
+        {{range .About.Links}}
+        <li>
+          <a href="{{.URL}}" class="btn btn--outline" target="_blank" rel="noopener noreferrer">{{.Label}}</a>
+        </li>
+        {{end}}
+      </ul>
+      {{end}}
+    </div>
+  </div>
+
+  {{if .About.ShowCV}}
+  <div class="cv-section">
+    <div class="cv-section__header">
+      <h2 class="section-title">Curriculum Vitae</h2>
+      <a href="{{.About.CVURL}}" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+        {{.About.CVLabel}}
+      </a>
+    </div>
+    <div class="cv-embed-wrap">
+      <iframe
+        src="{{.About.CVURL}}"
+        class="cv-embed"
+        title="Curriculum Vitae"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+  {{end}}
+</section>
+{{template "layout_end" .}}
+{{end}}
