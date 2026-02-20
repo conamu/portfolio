@@ -2,3 +2,5 @@ portfolio
 *.exe
 *.test
 .env
+.claude
+.idea
