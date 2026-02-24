@@ -34,13 +34,13 @@
   },
   {
     "id":                  "mycorrhizal",
-    "title":               "Go Mycorrhizal Module",
-    "description":         "A soon to be open source project in active development. Module that enables distributed monoliths with tooling for embedded distributed messaging and caching across the cluster.",
+    "title":               "Mycorrhizal - Distributed Computing library",
+    "description":         "A project to learn more about caching, datastructures, algorithms, networking and more.",
     "image":               "/static/img/mycorrhizal.jpg",
     "unsplash_author":     "Alina Grubnyak",
     "unsplash_author_url": "https://unsplash.com/de/@alinnnaaaa",
     "tags":                ["Go", "Module", "Distributed Computing", "Networking", "OSS"],
     "url":                 "",
-    "github":              ""
+    "github":              "https://github.com/conamu/mycorrhizal"
   }
 ]

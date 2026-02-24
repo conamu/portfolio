@@ -32,6 +32,11 @@ job "portfolio" {
       kill_timeout = "60s"
       kill_signal  = "SIGINT"
 
+      resources {
+        cpu    = 100
+        memory = 128
+      }
+
       config {
         image = "conamu470/portfolio"
       }
