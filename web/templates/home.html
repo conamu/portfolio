@@ -24,9 +24,11 @@
         </ul>
         {{end}}
         <div class="project-card__links">
+          {{if .GitHub}}
           <a href="{{.GitHub}}" class="btn btn--outline" target="_blank" rel="noopener noreferrer">
             GitHub
           </a>
+          {{end}}
           {{if .URL}}
           <a href="{{.URL}}" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
             Visit ↗

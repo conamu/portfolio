@@ -35,12 +35,23 @@
   {
     "id":                  "mycorrhizal",
     "title":               "Mycorrhizal - Distributed Computing library",
-    "description":         "A project to learn more about caching, datastructures, algorithms, networking and more.",
+    "description":         "A project to learn more about caching, datastructures, algorithms, networking, Open telemetry and more.",
     "image":               "/static/img/mycorrhizal.jpg",
     "unsplash_author":     "Alina Grubnyak",
     "unsplash_author_url": "https://unsplash.com/de/@alinnnaaaa",
     "tags":                ["Go", "Module", "Distributed Computing", "Networking", "OSS"],
     "url":                 "",
     "github":              "https://github.com/conamu/mycorrhizal"
+  },
+  {
+    "id":                  "drivers",
+    "title":               "Driver Community App",
+    "description":         "Currently im building an app for Communities centered around driving/riding any vehicles.",
+    "image":               "/static/img/mycorrhizal.jpg",
+    "unsplash_author":     "Alina Grubnyak",
+    "unsplash_author_url": "https://unsplash.com/de/@alinnnaaaa",
+    "tags":                ["Go", "Flutter", "Geodata", "Realtime data", "OTEL", "Web"],
+    "url":                 "",
+    "github":              ""
   }
 ]
