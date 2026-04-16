@@ -23,13 +23,13 @@
   },
   {
     "id":                  "article-site",
-    "title":               "A Historical Blog site",
-    "description":         "A project still in development with a customer. This is an archive of articles, books and podcasts he wrote.",
+    "title":               "Redfiles.org Blog",
+    "description":         "This is an archive of articles, books and podcasts a customer wrote.",
     "image":               "/static/img/placeholder.jpg",
     "unsplash_author":     "Hal Gatewood",
     "unsplash_author_url": "https://unsplash.com/de/@halacious",
     "tags":                ["Go", "Web", "Commercial"],
-    "url":                 "https://falanga.conamu.com",
+    "url":                 "https://redfiles.org",
     "github":              ""
   },
   {
@@ -44,9 +44,9 @@
     "github":              "https://github.com/conamu/mycorrhizal"
   },
   {
-    "id":                  "drivers",
-    "title":               "Driver Community App",
-    "description":         "Currently im building an app for Communities centered around driving/riding any vehicles.",
+    "id":                  "redlyne-club",
+    "title":               "Redlyne Clube",
+    "description":         "An app for Communities centered around driving/riding any vehicles.",
     "image":               "/static/img/mycorrhizal.jpg",
     "unsplash_author":     "Alina Grubnyak",
     "unsplash_author_url": "https://unsplash.com/de/@alinnnaaaa",

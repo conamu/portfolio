@@ -86,8 +86,15 @@ type CVProjectItem struct {
 
 var cvClient = &http.Client{Timeout: 8 * time.Second}
 
+var cvDataCached *CVData
+
 // FetchCV retrieves live CV data from the rxresume public API.
 func FetchCV(apiURL string) (CVData, error) {
+
+	if cvDataCached != nil {
+		return *cvDataCached, nil
+	}
+
 	resp, err := cvClient.Get(apiURL)
 	if err != nil {
 		return CVData{}, fmt.Errorf("fetch cv: %w", err)
@@ -102,5 +109,8 @@ func FetchCV(apiURL string) (CVData, error) {
 	if err := json.NewDecoder(resp.Body).Decode(&envelope); err != nil {
 		return CVData{}, fmt.Errorf("fetch cv: decode: %w", err)
 	}
+
+	cvDataCached = &envelope.Data
+
 	return envelope.Data, nil
 }
