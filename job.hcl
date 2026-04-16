@@ -3,6 +3,10 @@ job "portfolio" {
   namespace   = "app-portfolio"
   type        = "service"
 
+  meta {
+    run_uuid = uuidv4()
+  }
+
   group "portfolio-group" {
 
     count = 1
